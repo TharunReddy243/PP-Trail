@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>PulseProper</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="question.css">
+    
+</head>
+
+<body>
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #333;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="logoimage.png" width="50px" height="50px"
+                        alt="PuslseProper"></a>
+                <p style="color: white; margin-top: 15px;">PulseProper</p>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        {{!-- <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="/profile/:check_id" id="register-button"
+                                        style="color: white;">Profile Page</a></li>
+                            </ul>
+                        </div> --}}
+                        <li class="nav-item"><a class="nav-link" href="/" id="register-button"
+                                style="color: white;">SIGN OUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container ">
+        <form action="/formsubmitted" method="post" id="survey-form">
+            </header>
+
+            <div class="form-group">
+                <p id="HighBP">1. Has a doctor, nurse, or other health professional ever informed you that you have high
+                    blood pressure ?</p>
+                <select name="HighBP" required id="dropdown1" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="HighChol">2. Have you ever been told by a doctor, nurse, or other health professional that your
+                    blood cholesterol is high ?</p>
+                <select name="HighChol" required id="dropdown2" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="CholCheck">3. Did you have a cholesterol check within the past five years?</p>
+                <select name="CholCheck" required id="dropdown3" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bmi">4. What is your current Body Mass Index (BMI) ?</label>
+                <input type="number" min="1" max="100" step="0.1" name="BMI" id="BMI" class="formControl" required>
+            </div>
+
+            <div class="form-group">
+                <p id="Smoker">5. Have you smoked at least 100 cigarettes in your entire life ?</p>
+                <select name="Smoker" required id="dropdown4" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="Stroke">6. Have you ever been told that you had a stroke ?</p>
+                <select name="Stroke" required id="dropdown5" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="Diabetes">7. Have you ever been told that you have diabetes ?</p>
+                <label for="">
+                    <input type="radio" name="Diabetes" value="0.0" class="inputRadio">No diabetes or only during
+                    pregenency
+                </label>
+                <label for="">
+                    <input type="radio" name="Diabetes" value="1.0" class="inputRadio">Pre-diabetes or borderline
+                </label>
+                <label for="">
+                    <input type="radio" name="Diabetes" value="2.0" class="inputRadio"> Yes
+            </div>
+
+            <div class="form-group">
+                <p id="PhysActivity">8. In the past 30 days, have you engaged in any physical activity or exercise other
+                    than your regular job ?</p>
+                <select name="PhysActivity" required id="dropdown6" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="Fruits">9. On average, do you consume fruits at least once a day?</p>
+                <select name="Fruits" required id="dropdown7" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="Veggies">10. On average, do you consume vegetables at least once a day?</p>
+                <select name="Veggies" required id="dropdown8" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="HvyAlcoholConsump">11. Are you classified as a heavy drinker? (Men having more than 14 drinks per
+                    week, and women having more than 7 drinks per week)</p>
+                <select name="HvyAlcoholConsump" required id="dropdown9" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">12. How would you describe your general health ?(Choose b/w 1 and 5, 1 being best
+                    and 5 being worst.)</label>
+                <input type="number" min="1" max="5" name="GenHlth" id="GenHlth" class="formControl" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">13. In the past 30 days, for how many days was your mental health not good ?</label>
+                <input type="number" min="0" max="30" name="MentHlth" id="MentHlth" class="formControl" required>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="weight">14. In the past 30 days, for how many days was your physical health not good
+                    ?</label>
+                <input type="number" min="0" max="30" name="PhysHlth" id="PhysHlth" class="formControl" required>
+            </div>
+
+            <div class="form-group">
+                <p id="DiffWalk">15. Do you have serious difficulty walking or climbing stairs ?</p>
+                <select name="DiffWalk" required id="dropdown10" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Yes</option>
+                    <option value="0.0" class="option">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p id="Sex">16.Biological sex <span class="clue">*</span></p>
+                <select name="Sex" required id="dropdown11" class="formControl">
+                    <option value disabled selected>Select An Answer</option>
+                    <option value="1.0" class="option">Male</option>
+                    <option value="0.0" class="option">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">17.Age:</label>
+                <input type="number" min="1" max="13" name="Age" id="Age" class="formControl" required>
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+</body>
+
+</html>

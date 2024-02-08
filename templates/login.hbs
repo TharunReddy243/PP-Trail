@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PulseProper</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div>
+        <p style="color: brown; weight: bold; font-size: 20px;">{{success}}</p>
+        {{#if signupError}}
+        <p style="color: red; weight: bold;">{{signupErrorMessage}}</p>
+        {{/if}}
+        <br>
+    </div>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="/signup" method="post"  name="myform" onsubmit="return validation()">
+                <h1>Create Account</h1>
+                <span>Enter your name and password for registeration</span>
+                <input type="text" name="signupname" placeholder="Name" required>
+                <input type="password" name="signuppassword" placeholder="Password" required>
+                <input type="password" name="passwordcheck" placeholder="Re-enter password" required>
+                <div id="error"></div>
+                <button type="submit" {{#if hideSignupButton}}style="display: none;"{{/if}}>Sign Up</button>    
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="/login" method="post">
+                <h1>Sign In</h1>
+                <span>Enter your Details</span>
+                <input type="text" name="loginname" placeholder="Name" required>
+                <input type="password" name="loginpassword" id="pw" placeholder="Password" required>
+                <div>
+                    {{#if loginError}}
+                        <p style="color: red; weight: bold;">{{loginErrorMessage}}</p>
+                    {{/if}}
+                </div>
+                <button type="submit">Sign In</button>           
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            const container = document.getElementById('container');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
+
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
+            });
+
+
+
+            var pass = document.forms["myform"]["signuppassword"];
+            var errors = document.getElementById("error");
+            function validation(){
+                if(pass.value.length<6){
+                    errors.innerHTML="<span style='color: red; font-size:0.9rem'>Password must be greater than 6 characters</span>";
+                    errors.style.display="block";
+                    style="color:red;"
+                    return false;
+                }
+            }
+
+
+            
+    </script>
+</body>
+</html>

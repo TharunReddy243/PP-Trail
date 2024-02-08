@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+    <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="profile.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #333;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="logoimage.png" width="50px" height="50px" alt="PulseProper"></a>
+        <p style="color: white; margin-top: 15px;">PulseProper</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/" id="register-button" style="color: white;">SIGN OUT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card" style="background-color: #333;">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center" style="background-color: #333;">
+                <div class="image-box">
+                  {{#each user.details}}
+                  <img src="{{ this.imagePath }}" alt="Profile Image" class="rounded-circle" style="background-color: aliceblue;" height="150" width="150">
+                   {{/each}}
+                  <div class="mt-3">
+                    <h4 style="color: aliceblue;">{{ user.name }}</h4>
+                    <p class="text-secondary mb-1" style="color: aliceblue;">Employee</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {{#each user.details}}
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{this.fullname}}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Height(in cm)</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ this.height }}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Weight(in kg)</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ this.weight }}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Age</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ this.age }}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Sex</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ this.gender }}
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Blood Group</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{ this.bloodgroup }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+        <div class="row gutters-sm">
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="newform-box">
+                  <p class="col-sm-9 text-secondary" style="width: 100%;">Please fill the form to assess and monitor
+                    your cardiovascular well-being. Early detection and proactive measures are key to maintaining a
+                    healthy heart. Your health is our priority.</p>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="newform-button" class="btn btn-info" href="/question">NEW FORM</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body" style="overflow-y: scroll; height:260px ">
+                <h6 class="d-flex align-items-center mb-3">Previous Records</h6>
+                <small class="col-sm-9 text-secondary">1. AUG 21 2023</small>
+                <div class="row">
+                  <div class="col-sm-12" style="width: 100%;">
+                    <a class="preform-button" class="btn btn-info " target="__blank" href="#">Open</a>
+                  </div>
+                  <small class="col-sm-9 text-secondary">2. SEP 8 2023</small>
+                  <div class="row">
+                    <div class="col-sm-12" style="width: 100%;">
+                      <a class="preform-button" class="btn btn-info " target="__blank" href="#">Open</a>
+                    </div>
+                    <small class="col-sm-9 text-secondary">3. DEC 9 2023</small>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <a class="preform-button" class="btn btn-info " target="__blank" href="#">Open</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
