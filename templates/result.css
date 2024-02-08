@@ -1,0 +1,96 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: grey;
+}
+.container{
+    display: flex;
+    width: 420px;
+    padding: 50px 0;
+    border-radius: 8px;
+    background: #fff;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.circular-progress{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: conic-gradient(#333 3.6deg, #ededed 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+}
+.text{
+    font-size: 30px;
+    font-weight: 500;
+    color: #606060;
+}
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Adjusted to a column layout */
+    align-items: center;
+    justify-content: center;
+    background: grey;
+}
+
+.container {
+    display: flex;
+    width: 420px;
+    padding: 50px 0;
+    border-radius: 8px;
+    background: #fff;
+    row-gap: 30px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin-bottom to create space between the white box and suggestions button */
+}
+
+.suggestions-container {
+    text-align: center; /* Center the suggestions button */
+}
+#register-button
+{
+    border: 1px solid #333;
+    background-color: gray;
+    border-radius: 5px;
+}
+.nav-item{
+    float: right;
+    margin-left: 920px;
+}
+
+.nav-link{
+    display: block;
+}
